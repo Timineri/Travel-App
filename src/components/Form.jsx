@@ -1,8 +1,7 @@
 // import React from "react";
-
 import { useState } from "react";
 
-export default function Form() {
+export default function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -11,7 +10,7 @@ export default function Form() {
 
     if (!description) return;
     const newItems = { quantity, description, packed: false, id: Date.now() };
-    console.log(newItems);
+    onAddItems(newItems);
 
     setDescription("");
     setQuantity(1);
@@ -26,7 +25,7 @@ export default function Form() {
   }
 
   return (
-    <form className="add-form" onClick={handleSubmit}>
+    <form className="add-form" onSubmit={handleSubmit}>
       <h3>What go you need for your 😍 trip?</h3>
       <select value={quantity} onChange={handleQuantityChange}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (

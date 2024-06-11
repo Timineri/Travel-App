@@ -112,12 +112,12 @@ input {
 input[type="checkbox"] {
   height: 2rem;
   width: 2rem;
-  accent-color: #e5771f;
+  accent-color: #76c7ad;
 }
 
 .list li button {
   cursor: pointer;
-  /* background: none; */
+  background: #76c7ad;
   border: none;
   font-size: 1.8rem;
   padding: 0.8rem;
